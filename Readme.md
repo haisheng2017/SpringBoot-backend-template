@@ -11,6 +11,7 @@ Created by maven 3.5.4
 3. Resources are placed in common module as recommended. Common module doesn't import api dependency. So you could place them in api unless they are unnecessary for your test.
 4. Change Application class `@ComponentScan` value to your wanted package name.
 5. Remove the properties `maven.deploy.skip` in pom of common module if you want to deploy it to your server.
+6. The Swagger-ui url is `http://localhost:8079/swagger-ui.html`.BTW in 2.9.2 version you must `@ApiModelProperty` to your properties of models
 
 # Spring boot 2 后端框架
 Maven 3.5.4构建
@@ -25,8 +26,9 @@ Maven 3.5.4构建
 3. 资源文件最好放在common模块的resources里，因为common没有依赖api模块。所以你可以放单元测试用不到的资源在api里面
 4. Application类中的注解`@ComponentScan`里面的值记得改成自己的包名
 5. 如果你想把common包也部署到私服，记得把common模块pom中的`maven.deploy.skip`去掉
+6. Swagger接口文档地址是`http://localhost:8079/swagger-ui.html`，2.9.2版本的swagger必须要加`@ApiModelProperty`在你的model类的属性里
 
 #### TODO 
-- swagger
+~~- swagger~~ Done
 - common result
 - aop exception
