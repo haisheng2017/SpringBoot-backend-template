@@ -27,8 +27,3 @@ Maven 3.5.4构建
 4. Application类中的注解`@ComponentScan`里面的值记得改成自己的包名
 5. 如果你想把common包也部署到私服，记得把common模块pom中的`maven.deploy.skip`去掉
 6. Swagger接口文档地址是`http://localhost:8079/swagger-ui.html`，2.9.2版本的swagger必须要加`@ApiModelProperty`在你的model类的属性里
-
-#### TODO 
-~~- swagger~~ Done
-- common result
-- aop exception

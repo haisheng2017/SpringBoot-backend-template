@@ -1,6 +1,8 @@
 package com.hao.template.api.controller;
 
-import com.hao.template.common.model.User;
+import com.hao.template.common.enums.ErrorCode;
+import com.hao.template.common.exception.TemplateException;
+import com.hao.template.common.response.Result;
 import com.hao.template.common.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,7 +26,13 @@ public class UserController {
 
     @ApiOperation("Get user by id")
     @GetMapping
-    public User getUser(@ApiParam(value = "id", required = true) @RequestParam Integer id) {
-        return userService.findOne(id);
+    public Result<?> getUser(@ApiParam(value = "id", required = true) @RequestParam Integer id) {
+        return Result.success(userService.findOne(id));
+    }
+
+    @ApiOperation("Get exception")
+    @GetMapping("/e")
+    public Result<?> getException() {
+        throw new TemplateException(ErrorCode.FAILED);
     }
 }
